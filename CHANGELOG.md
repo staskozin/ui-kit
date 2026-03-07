@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/staskozin/ui-kit/compare/v1.2.0...v1.3.0) (2026-03-07)
+
+
+### Features
+
+* **components:** добавлен шрифт Inter ([48121a3](https://github.com/staskozin/ui-kit/commit/48121a3e4a42b1bb634ee5a43da2f70d4e37a9c0))
+
 # [1.2.0](https://github.com/staskozin/ui-kit/compare/v1.1.0...v1.2.0) (2026-03-02)
 
 
