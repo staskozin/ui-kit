@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/staskozin/ui-kit/compare/v1.3.0...v1.4.0) (2026-03-07)
+
+
+### Features
+
+* обновлена документация ([973d27a](https://github.com/staskozin/ui-kit/commit/973d27a7e16399b592a0fefaa1b94f6f136bfdfb))
+
 # [1.3.0](https://github.com/staskozin/ui-kit/compare/v1.2.0...v1.3.0) (2026-03-07)
 
 
