@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Vue 3** + **TypeScript** (~5.9, strict mode, noUnusedLocals, noUnusedParameters)
 - **Vite 7** в library mode (формат ES, vue externalized)
-- **SCSS** (sass-embedded) — scoped styles в SFC, единицы em
+- **SCSS** (sass-embedded) — scoped styles в SFC, размеры через функцию `px()` (см. ниже)
 - **Storybook 10** (vue3-vite) — для разработки и демонстрации компонентов
 - **Vitest** + Playwright — тестирование stories в браузере (chromium, headless)
 - **semantic-release** — автоматическое версионирование и публикация на npm
@@ -57,6 +57,15 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 - `feat(components): добавлен UiButton` — minor release
 - `fix(package.json): обновлены зависимости` — patch release
 - `feat!: редизайн API UiButton` — major release (breaking change)
+
+## Размеры в стилях
+
+Все размеры указываются в пикселях через SCSS-функцию `px()` из `src/assets/utils.scss`. Функция конвертирует пиксели в `rem` (`px(16)` → `1rem`), что позволяет масштабировать всё приложение через `font-size` на `<html>`. Функция доступна глобально во всех компонентах через `additionalData` в Vite и Storybook.
+
+```scss
+padding: px(8) px(20);    // → 0.5rem 1.25rem
+border-radius: px(4);     // → 0.25rem
+```
 
 ## Как добавлять компоненты
 
