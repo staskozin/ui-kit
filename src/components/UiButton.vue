@@ -50,35 +50,35 @@ const iconSize = computed(() => {
 .UiButton {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     display: flex;
-    column-gap: .5em;
+    column-gap: px(8);
     border: none;
-    border-radius: .25em;
+    border-radius: px(4);
 
     &.--size-small {
-        font-size: .875rem;
-        line-height: 1.5em;
-        padding: .375em .625em .375em .5em;
-        column-gap: .25em;
+        font-size: px(14);
+        line-height: px(20);
+        padding: px(5) px(14) px(7) px(14);
+        column-gap: px(4);
     }
 
     &.--size-medium {
-        font-size: 1rem;
-        line-height: 1.5em;
-        padding: .5em 1.25em;
+        font-size: px(16);
+        line-height: px(24);
+        padding: px(8) px(20);
 
         &.--has-icon {
-            padding: .5em .75em;
+            padding: px(8) px(12);
 
             &:not(.--has-label) {
-                padding: .625em;
+                padding: px(10);
             }
         }
     }
 
     &.--size-large {
-        font-size: 1rem;
-        line-height: 1.25em;
-        padding: .75em 1.5em;
+        font-size: px(16);
+        line-height: px(24);
+        padding: px(12) px(24);
     }
 }
 </style>

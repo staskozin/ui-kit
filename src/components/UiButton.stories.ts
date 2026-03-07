@@ -17,11 +17,6 @@ const meta = {
       control: { type: 'select' },
     }
   },
-  decorators: [
-    () => ({
-      template: '<div style="font-size: 16px;font-family:Inter;"><story /></div>',
-    }),
-  ],
 } satisfies Meta<typeof UiButton>;
 
 export default meta;

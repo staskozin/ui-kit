@@ -32,13 +32,13 @@ const classList = computed(() => {
 <style lang="scss">
 .UiIcon {
     &.--size-small {
-        width: 1rem;
-        height: 1rem;
+        width: px(16);
+        height: px(16);
     }
 
     &.--size-medium {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: px(20);
+        height: px(20);
     }
 }
 </style>

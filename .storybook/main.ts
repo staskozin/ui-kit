@@ -1,4 +1,8 @@
 import type { StorybookConfig } from '@storybook/vue3-vite';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
   "stories": [
@@ -12,6 +16,15 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-onboarding"
   ],
-  "framework": "@storybook/vue3-vite"
+  "framework": "@storybook/vue3-vite",
+  viteFinal(config) {
+    config.css ??= {};
+    config.css.preprocessorOptions ??= {};
+    config.css.preprocessorOptions.scss = {
+      ...config.css.preprocessorOptions.scss,
+      additionalData: `@use "${resolve(__dirname, '../src/assets/utils').replace(/\\/g, '/')}" as *;\n`
+    };
+    return config;
+  }
 };
 export default config;
