@@ -48,7 +48,7 @@ const iconSize = computed(() => {
 
 <style lang="scss">
 .UiButton {
-    font-family: inherit;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     display: flex;
     column-gap: .5em;
     border: none;
