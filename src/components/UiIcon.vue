@@ -1,5 +1,9 @@
 <template>
-    <div :class="classList" class="UiIcon" v-html="Icons[name]"></div>
+    <div
+        :class="classList"
+        class="UiIcon"
+        v-html="Icons[name]"
+    ></div>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,13 @@
 <template>
-    <button :class="classList" class="UiButton">
-        <UiIcon v-if="icon" :name="icon" :size="iconSize" />
+    <button
+        :class="classList"
+        class="UiButton"
+    >
+        <UiIcon
+            v-if="icon"
+            :name="icon"
+            :size="iconSize"
+        />
 
         {{ label }}
     </button>
