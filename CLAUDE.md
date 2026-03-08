@@ -66,7 +66,40 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 
 ## Дизайн-токены
 
-Цвета определены как CSS custom properties в `src/assets/tokens.scss` и импортируются в `index.ts`. Палитра: `--ui-color-{gray|blue|red|green|yellow}-{100..1000}`. Семантические токены (например `--ui-bg`) переключаются через `[data-theme='light']` / `[data-theme='dark']`.
+Токены определены в `src/assets/tokens.scss` и импортируются в `index.ts`.
+
+### Gray-палитра
+
+Серые цвета заданы hex-значениями: `--ui-color-gray-{200..900}`. Используются для текста, фонов, бордеров.
+
+### OKLCH-шкала (100–900)
+
+Для генерации цветов из произвольного hue определены CSS-переменные `--ui-l-{step}` (lightness) и `--ui-c-{step}` (chroma). Значения L/C получены из [Harmonizer](https://harmonizer.evilmartians.com) (P3, even chroma, среднее L между четырьмя hue). Шкала используется через SCSS-функцию `color()` (см. ниже).
+
+### Семантические токены
+
+Переключаются через `[data-theme="light"]` / `[data-theme="dark"]`: `--ui-bg` и др.
+
+### SCSS-функция `color()`
+
+Генерирует `oklch()` из уровня шкалы и hue. Доступна глобально (через `additionalData` рядом с `px()`).
+
+```scss
+color(700)       // → oklch(var(--ui-l-700) var(--ui-c-700) var(--hue))
+color(700, 226)  // → oklch(var(--ui-l-700) var(--ui-c-700) 226)
+```
+
+Компоненты задают `--hue` через проп и используют `color(step)` в стилях:
+
+```scss
+background-color: color(700); // normal
+&:hover {
+    background-color: color(800);
+}
+&:active {
+    background-color: color(900);
+}
+```
 
 ## Размеры в стилях
 
