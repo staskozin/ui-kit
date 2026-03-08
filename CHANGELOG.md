@@ -1,3 +1,9 @@
+# [1.5.0](https://github.com/staskozin/ui-kit/compare/v1.4.0...v1.5.0) (2026-03-08)
+
+### Features
+
+- **assets:** добавлены дизайн-токены цветовой палитры и тем ([862c3bd](https://github.com/staskozin/ui-kit/commit/862c3bd8cfdc4ff3639d1d48413492175604a4f5))
+
 # [1.4.0](https://github.com/staskozin/ui-kit/compare/v1.3.0...v1.4.0) (2026-03-07)
 
 ### Features
