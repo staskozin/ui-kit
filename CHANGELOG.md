@@ -1,3 +1,9 @@
+# [1.6.0](https://github.com/staskozin/ui-kit/compare/v1.5.0...v1.6.0) (2026-03-08)
+
+### Features
+
+- **components:** добавлена система цветов на OKLCH с поддержкой тем в Storybook ([46c6959](https://github.com/staskozin/ui-kit/commit/46c695960394bc973698a8a19af40dd36139e544))
+
 # [1.5.0](https://github.com/staskozin/ui-kit/compare/v1.4.0...v1.5.0) (2026-03-08)
 
 ### Features
