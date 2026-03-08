@@ -80,6 +80,14 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 
 Переключаются через `[data-theme="light"]` / `[data-theme="dark"]`: `--ui-bg` и др.
 
+### SCSS-функция `gray()`
+
+Возвращает серый цвет из палитры. Доступна глобально.
+
+```scss
+gray(700) // → var(--ui-color-gray-700)
+```
+
 ### SCSS-функция `color()`
 
 Генерирует `oklch()` из уровня шкалы и hue. Доступна глобально (через `additionalData` рядом с `px()`).
@@ -89,15 +97,15 @@ color(700)       // → oklch(var(--ui-l-700) var(--ui-c-700) var(--hue))
 color(700, 226)  // → oklch(var(--ui-l-700) var(--ui-c-700) 226)
 ```
 
-Компоненты задают `--hue` через проп и используют `color(step)` в стилях:
+Компоненты задают `--hue` через проп и используют `color(step)` в стилях. Без `hue` компонент использует `gray()` для нейтрального варианта, с `hue` — `color()` для акцентного:
 
 ```scss
-background-color: color(700); // normal
-&:hover {
-    background-color: color(800);
-}
-&:active {
-    background-color: color(900);
+// Нейтральный (по умолчанию)
+background-color: gray(600);
+
+// Акцентный (при наличии hue)
+&.--accent {
+    background-color: color(700);
 }
 ```
 
