@@ -27,7 +27,7 @@ type UiButtonProps = {
 };
 
 const {
-    label,
+    label = 'Кнопка',
     icon,
     size = 'medium'
 } = defineProps<UiButtonProps>();

@@ -7,6 +7,7 @@ import Icons from '../assets/icons';
 // Meta
 const meta = {
   component: UiButton,
+  tags: ['autodocs'],
   argTypes: {
     size: {
       options: ['small', 'medium', 'large'],
@@ -28,7 +29,6 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
   args: {
     size: 'medium',
-    label: 'UiButton',
   },
 };
 
@@ -43,6 +43,5 @@ export const NormalWithIcon: Story = {
   args: {
     size: 'medium',
     icon: 'calendar',
-    label: 'UiButton',
   },
 };
