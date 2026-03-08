@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/vue3-vite';
+import '../src/assets/tokens.scss';
 
 const preview: Preview = {
     parameters: {
@@ -16,6 +17,33 @@ const preview: Preview = {
             test: 'todo',
         },
     },
+
+    globalTypes: {
+        theme: {
+            description: 'Тема оформления',
+            toolbar: {
+                title: 'Theme',
+                icon: 'mirror',
+                items: [
+                    { value: 'light', title: 'Light' },
+                    { value: 'dark', title: 'Dark' },
+                ],
+                dynamicTitle: true,
+            },
+        },
+    },
+
+    initialGlobals: {
+        theme: 'light',
+    },
+
+    decorators: [
+        (story, context) => {
+            const theme = context.globals.theme || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            return story();
+        },
+    ],
 };
 
 export default preview;

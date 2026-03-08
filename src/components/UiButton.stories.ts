@@ -16,6 +16,9 @@ const meta = {
             options: Object.keys(Icons),
             control: { type: 'select' },
         },
+        hue: {
+            control: { type: 'range', min: 0, max: 360, step: 1 },
+        },
     },
 } satisfies Meta<typeof UiButton>;
 
@@ -41,5 +44,23 @@ export const NormalWithIcon: Story = {
     args: {
         size: 'medium',
         icon: 'calendar',
+    },
+};
+
+export const Red: Story = {
+    args: {
+        hue: 27,
+    },
+};
+
+export const Green: Story = {
+    args: {
+        hue: 150,
+    },
+};
+
+export const Blue: Story = {
+    args: {
+        hue: 226,
     },
 };

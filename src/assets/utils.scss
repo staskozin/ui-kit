@@ -3,3 +3,14 @@
 @function px($px) {
     @return math.div($px, 16) * 1rem;
 }
+
+// Генерирует oklch() цвет из уровня шкалы (100–900) и hue.
+// Hue по умолчанию берётся из CSS-переменной --hue (проп компонента).
+// @example color(700)       → oklch(var(--ui-l-700) var(--ui-c-700) var(--hue))
+// @example color(700, 226)  → oklch(var(--ui-l-700) var(--ui-c-700) 226)
+@function color($step, $hue: null) {
+    @if $hue {
+        @return oklch(var(--ui-l-#{$step}) var(--ui-c-#{$step}) #{$hue});
+    }
+    @return oklch(var(--ui-l-#{$step}) var(--ui-c-#{$step}) var(--hue));
+}
