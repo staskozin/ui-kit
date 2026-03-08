@@ -22,6 +22,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev              # Storybook на localhost:6006
 npm run build            # vue-tsc + vite build → dist/
 npm run build:storybook  # статичная сборка Storybook
+npm run lint             # проверка форматирования (prettier --check)
+npm run format           # автоформатирование (prettier --write)
+npx vitest               # запуск тестов (stories в headless chromium)
 ```
 
 ## Структура
@@ -32,6 +35,8 @@ src/
   types.ts              — общие типы (UiElementSize: 'small' | 'medium' | 'large')
   assets/
     fonts.scss          — @font-face Inter (импортируется в index.ts)
+    tokens.scss         — CSS custom properties: цветовая палитра и семантические токены тем
+    utils.scss          — SCSS-функция px() (подключена глобально через additionalData)
     icons.ts            — SVG-константы иконок
   components/
     UiКомпонент.vue     — SFC компонент
@@ -58,6 +63,10 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 - `feat(components): добавлен UiButton` — minor release
 - `fix(package.json): обновлены зависимости` — patch release
 - `feat!: редизайн API UiButton` — major release (breaking change)
+
+## Дизайн-токены
+
+Цвета определены как CSS custom properties в `src/assets/tokens.scss` и импортируются в `index.ts`. Палитра: `--ui-color-{gray|blue|red|green|yellow}-{100..1000}`. Семантические токены (например `--ui-bg`) переключаются через `[data-theme='light']` / `[data-theme='dark']`.
 
 ## Размеры в стилях
 
