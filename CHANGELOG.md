@@ -1,3 +1,9 @@
+# [1.7.0](https://github.com/staskozin/ui-kit/compare/v1.6.0...v1.7.0) (2026-03-08)
+
+### Features
+
+- **UiButton:** добавлена поддержка нейтрального стиля с акцентной модификацией ([db53184](https://github.com/staskozin/ui-kit/commit/db53184b3ee35bf68162176628abad877238784a))
+
 # [1.6.0](https://github.com/staskozin/ui-kit/compare/v1.5.0...v1.6.0) (2026-03-08)
 
 ### Features
