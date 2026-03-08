@@ -30,6 +30,13 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
     args: {
         size: 'medium',
+        disabled: false,
+    },
+};
+
+export const Accent: Story = {
+    args: {
+        hue: 226,
     },
 };
 
@@ -40,10 +47,11 @@ export const Icon: Story = {
     },
 };
 
-export const NormalWithIcon: Story = {
+export const IconAccent: Story = {
     args: {
         size: 'medium',
         icon: 'calendar',
+        hue: 226,
     },
 };
 
@@ -56,11 +64,5 @@ export const Red: Story = {
 export const Green: Story = {
     args: {
         hue: 150,
-    },
-};
-
-export const Blue: Story = {
-    args: {
-        hue: 226,
     },
 };

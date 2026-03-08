@@ -33,7 +33,7 @@ const {
     label = 'Кнопка',
     icon,
     size = 'medium',
-    hue = 226,
+    hue,
     disabled = false,
 } = defineProps<UiButtonProps>();
 
@@ -43,6 +43,7 @@ const classList = computed(() => {
         `--size-${size}`,
         ...(icon ? ['--has-icon'] : []),
         ...(label ? ['--has-label'] : []),
+        ...(hue !== undefined ? ['--accent'] : []),
     ];
 });
 
@@ -51,15 +52,12 @@ const iconSize = computed(() => {
 });
 
 const styleList = computed(() => {
-    return { '--hue': hue };
+    return hue !== undefined ? { '--hue': hue } : {};
 });
 </script>
 
 <style lang="scss">
 .UiButton {
-    // Авто-цвет текста: белый при тёмном фоне, тёмный при светлом
-    --_text-l: clamp(0.15, (0.6 - var(--ui-l-700)) * 1000, 0.99);
-
     font-family:
         'Inter',
         -apple-system,
@@ -76,21 +74,39 @@ const styleList = computed(() => {
     border: none;
     border-radius: px(4);
     cursor: pointer;
-    background-color: color(700);
-    color: var(--ui-color-gray-200);
+    background-color: gray(400);
+    color: gray(800);
 
     &:hover {
-        background-color: color(800);
+        background-color: gray(300);
     }
 
     &:active {
-        background-color: color(900);
-        color: var(--ui-color-gray-300);
+        background-color: gray(600);
+        color: gray(800);
     }
 
     &:disabled {
-        background-color: color(100);
-        color: var(--ui-color-gray-400);
+        background-color: gray(400);
+        color: gray(500);
+    }
+
+    &.--accent {
+        background-color: color(700);
+
+        &:hover {
+            background-color: color(800);
+        }
+
+        &:active {
+            background-color: color(900);
+            color: gray(300);
+        }
+
+        &:disabled {
+            background-color: color(100);
+            color: gray(400);
+        }
     }
 
     &.--size-small {
@@ -123,8 +139,13 @@ const styleList = computed(() => {
 
 [data-theme='dark'] .UiButton {
     &:disabled {
+        background-color: gray(700);
+        color: gray(600);
+    }
+
+    &.--accent:disabled {
         background-color: color(900);
-        color: var(--ui-color-gray-600);
+        color: gray(600);
     }
 }
 </style>

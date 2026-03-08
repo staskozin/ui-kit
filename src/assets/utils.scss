@@ -4,6 +4,12 @@
     @return math.div($px, 16) * 1rem;
 }
 
+// Возвращает серый цвет из палитры (200–900).
+// @example gray(700) → var(--ui-color-gray-700)
+@function gray($step) {
+    @return var(--ui-color-gray-#{$step});
+}
+
 // Генерирует oklch() цвет из уровня шкалы (100–900) и hue.
 // Hue по умолчанию берётся из CSS-переменной --hue (проп компонента).
 // @example color(700)       → oklch(var(--ui-l-700) var(--ui-c-700) var(--hue))
