@@ -28,7 +28,8 @@
         "build": "vue-tsc -b && vite build",
         "build:storybook": "storybook build",
         "prepare": "husky",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "lint": "prettier --check ."
     },
     "lint-staged": {
         "*": "prettier --write --ignore-unknown"
