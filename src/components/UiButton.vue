@@ -58,6 +58,8 @@ const styleList = computed(() => {
 
 <style lang="scss">
 .UiButton {
+    @include transition-instant-hover(background-color);
+
     font-family:
         'Inter',
         -apple-system,
