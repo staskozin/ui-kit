@@ -1,14 +1,6 @@
 <template>
-    <button
-        :class="classList"
-        class="UiButton"
-    >
-
-        <UiIcon
-            v-if="icon"
-            :name="icon"
-            :size="iconSize"
-        />
+    <button :class="classList" class="UiButton">
+        <UiIcon v-if="icon" :name="icon" :size="iconSize" />
 
         {{ label }}
     </button>
@@ -21,24 +13,24 @@ import UiIcon from './UiIcon.vue';
 
 // Props
 type UiButtonProps = {
-    label?: string
-    icon?: 'calendar'
-    size?: UiElementSize
+    label?: string;
+    icon?: 'calendar';
+    size?: UiElementSize;
 };
 
 const {
     label = 'Кнопка',
     icon,
-    size = 'medium'
+    size = 'medium',
 } = defineProps<UiButtonProps>();
 
 // Computed
 const classList = computed(() => {
     return [
         `--size-${size}`,
-        ...icon ? ['--has-icon'] : [],
-        ...label ? ['--has-label'] : [],
-    ]
+        ...(icon ? ['--has-icon'] : []),
+        ...(label ? ['--has-label'] : []),
+    ];
 });
 
 const iconSize = computed(() => {
@@ -48,7 +40,16 @@ const iconSize = computed(() => {
 
 <style lang="scss">
 .UiButton {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-family:
+        'Inter',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        'Helvetica Neue',
+        Arial,
+        'Noto Sans',
+        sans-serif;
     display: flex;
     column-gap: px(8);
     border: none;

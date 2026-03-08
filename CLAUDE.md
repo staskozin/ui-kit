@@ -54,6 +54,7 @@ src/
 ## Коммиты
 
 Conventional Commits (commitlint + husky hook). Сообщения на русском. Примеры:
+
 - `feat(components): добавлен UiButton` — minor release
 - `fix(package.json): обновлены зависимости` — patch release
 - `feat!: редизайн API UiButton` — major release (breaking change)
@@ -63,8 +64,8 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 Все размеры указываются в пикселях через SCSS-функцию `px()` из `src/assets/utils.scss`. Функция конвертирует пиксели в `rem` (`px(16)` → `1rem`), что позволяет масштабировать всё приложение через `font-size` на `<html>`. Функция доступна глобально во всех компонентах через `additionalData` в Vite и Storybook.
 
 ```scss
-padding: px(8) px(20);    // → 0.5rem 1.25rem
-border-radius: px(4);     // → 0.25rem
+padding: px(8) px(20); // → 0.5rem 1.25rem
+border-radius: px(4); // → 0.25rem
 ```
 
 ## Как добавлять компоненты

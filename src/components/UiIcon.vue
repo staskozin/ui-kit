@@ -1,9 +1,5 @@
 <template>
-    <div
-        :class="classList"
-        class="UiIcon"
-        v-html="Icons[name]"
-    ></div>
+    <div :class="classList" class="UiIcon" v-html="Icons[name]"></div>
 </template>
 
 <script setup lang="ts">
@@ -13,19 +9,15 @@ import type { UiElementSize } from '../types';
 
 // Props
 type UiIconProps = {
-    name: 'calendar'
-    size?: UiElementSize
-}
+    name: 'calendar';
+    size?: UiElementSize;
+};
 
-const {
-    size = 'medium',
-} = defineProps<UiIconProps>();
+const { size = 'medium' } = defineProps<UiIconProps>();
 
 // Computed
 const classList = computed(() => {
-    return [
-        `--size-${size}`,
-    ]
+    return [`--size-${size}`];
 });
 </script>
 
