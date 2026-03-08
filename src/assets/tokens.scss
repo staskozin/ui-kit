@@ -1,0 +1,71 @@
+:root {
+    // Gray 200-900
+    --ui-color-gray-200: #ffffff;
+    --ui-color-gray-300: #f5f4f2;
+    --ui-color-gray-400: #c8c9c3;
+    --ui-color-gray-500: #999e98;
+    --ui-color-gray-600: #6f7572;
+    --ui-color-gray-700: #3e4242;
+    --ui-color-gray-800: #1f1f21;
+    --ui-color-gray-900: #000000;
+
+    // Blue 100-1000
+    --ui-color-blue-100: #ecf9fe;
+    --ui-color-blue-200: #c4edff;
+    --ui-color-blue-300: #89ddff;
+    --ui-color-blue-400: #2bcbff;
+    --ui-color-blue-500: #07b1e0;
+    --ui-color-blue-600: #099ec9;
+    --ui-color-blue-700: #067ea1;
+    --ui-color-blue-800: #02617d;
+    --ui-color-blue-900: #003d50;
+    --ui-color-blue-1000: #022b39;
+
+    // Red 100-1000
+    --ui-color-red-100: #fef4f3;
+    --ui-color-red-200: #fee0dc;
+    --ui-color-red-300: #fec4bc;
+    --ui-color-red-400: #ffa69c;
+    --ui-color-red-500: #ff7b6f;
+    --ui-color-red-600: #ff544c;
+    --ui-color-red-700: #e0061a;
+    --ui-color-red-800: #ad0412;
+    --ui-color-red-900: #6d0208;
+    --ui-color-red-1000: #4c0104;
+
+    // Green 100-1000
+    --ui-color-green-100: #ddffe2;
+    --ui-color-green-200: #87ffa4;
+    --ui-color-green-300: #0cf071;
+    --ui-color-green-400: #02d965;
+    --ui-color-green-500: #03bc57;
+    --ui-color-green-600: #07a84e;
+    --ui-color-green-700: #04863d;
+    --ui-color-green-800: #02672d;
+    --ui-color-green-900: #02411a;
+    --ui-color-green-1000: #012e11;
+
+    // Yellow 100-1000
+    --ui-color-yellow-100: #fef5e9;
+    --ui-color-yellow-200: #fee3c1;
+    --ui-color-yellow-300: #fec883;
+    --ui-color-yellow-400: #ffac28;
+    --ui-color-yellow-500: #e19303;
+    --ui-color-yellow-600: #c98404;
+    --ui-color-yellow-700: #a36901;
+    --ui-color-yellow-800: #7d5002;
+    --ui-color-yellow-900: #503201;
+    --ui-color-yellow-1000: #392301;
+}
+
+[data-theme='light'] {
+    // Семантические токены
+    --ui-bg: var(--ui-color-gray-300);
+}
+
+[data-theme='dark'] {
+    // Палитра в тёмной теме не меняется
+
+    // Семантические токены
+    --ui-bg: var(--ui-color-gray-800);
+}
