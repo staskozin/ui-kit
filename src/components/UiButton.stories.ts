@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import UiButton from './UiButton.vue';
 import Icons from '../assets/icons';
+import { UiElementSize } from '../types';
 
 // Meta
 const meta = {
@@ -9,7 +10,7 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
         size: {
-            options: ['small', 'medium', 'large'],
+            options: Object.values(UiElementSize),
             control: { type: 'inline-radio' },
         },
         icon: {
@@ -29,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        size: 'medium',
+        size: UiElementSize.Medium,
         disabled: false,
     },
 };
@@ -42,14 +43,14 @@ export const Accent: Story = {
 
 export const Icon: Story = {
     args: {
-        size: 'medium',
+        size: UiElementSize.Medium,
         icon: 'calendar',
     },
 };
 
 export const IconAccent: Story = {
     args: {
-        size: 'medium',
+        size: UiElementSize.Medium,
         icon: 'calendar',
         hue: 226,
     },

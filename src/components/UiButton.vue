@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { UiElementSize } from '../types';
+import { UiElementSize } from '../types';
 import UiIcon from './UiIcon.vue';
 
 // Props
@@ -32,7 +32,7 @@ type UiButtonProps = {
 const {
     label = 'Кнопка',
     icon,
-    size = 'medium',
+    size = UiElementSize.Medium,
     hue,
     disabled = false,
 } = defineProps<UiButtonProps>();
@@ -48,7 +48,7 @@ const classList = computed(() => {
 });
 
 const iconSize = computed(() => {
-    return size !== 'large' ? size : 'medium';
+    return size !== UiElementSize.Large ? size : UiElementSize.Medium;
 });
 
 const styleList = computed(() => {

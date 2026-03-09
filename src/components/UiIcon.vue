@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import Icons from '../assets/icons';
-import type { UiElementSize } from '../types';
+import { UiElementSize } from '../types';
 
 // Props
 type UiIconProps = {
@@ -17,7 +17,7 @@ type UiIconProps = {
     size?: UiElementSize;
 };
 
-const { size = 'medium' } = defineProps<UiIconProps>();
+const { size = UiElementSize.Medium } = defineProps<UiIconProps>();
 
 // Computed
 const classList = computed(() => {
