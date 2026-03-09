@@ -32,7 +32,7 @@ npx vitest               # запуск тестов (stories в headless chromi
 ```
 src/
   index.ts              — точка входа, реэкспорт компонентов и типов
-  types.ts              — общие типы (UiElementSize: 'small' | 'medium' | 'large')
+  types.ts              — общие типы (UiElementSize: Small, Medium, Large)
   assets/
     fonts.scss          — @font-face Inter (импортируется в index.ts)
     tokens.scss         — CSS custom properties: цветовая палитра и семантические токены тем
