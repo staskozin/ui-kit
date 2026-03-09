@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/staskozin/ui-kit/compare/v1.7.0...v1.8.0) (2026-03-08)
+
+### Features
+
+- **utils:** добавлен миксин transition-instant-hover для мгновенной реакции на hover ([90b83d6](https://github.com/staskozin/ui-kit/commit/90b83d6526cda21004c10f8c5d7caa9fe4171b9f))
+
 # [1.7.0](https://github.com/staskozin/ui-kit/compare/v1.6.0...v1.7.0) (2026-03-08)
 
 ### Features
