@@ -72,6 +72,7 @@ const styleList = computed(() => {
         sans-serif;
     font-weight: 400;
     display: flex;
+    align-items: center;
     column-gap: px(8);
     border: none;
     border-radius: px(4);
@@ -80,12 +81,11 @@ const styleList = computed(() => {
     color: gray(800);
 
     &:hover {
-        background-color: gray(300);
+        background-color: gray(500);
     }
 
     &:active {
         background-color: gray(600);
-        color: gray(800);
     }
 
     &:disabled {
@@ -93,21 +93,40 @@ const styleList = computed(() => {
         color: gray(500);
     }
 
+    &:focus {
+        outline: px(2) solid gray(300);
+        box-shadow: 0px 0px 8px gray(300);
+    }
+
+    .UiIcon {
+        color: gray(800);
+    }
+
     &.--accent {
         background-color: color(700);
+        color: gray(200);
 
         &:hover {
             background-color: color(800);
+            color: gray(300);
         }
 
         &:active {
             background-color: color(900);
-            color: gray(300);
+            color: gray(400);
         }
 
         &:disabled {
-            background-color: color(100);
-            color: gray(400);
+            background-color: color(200);
+            color: gray(300);
+        }
+
+        &:focus {
+            outline-color: px(2) solid gray(300);
+        }
+
+        .UiIcon {
+            color: gray(200);
         }
     }
 
@@ -133,6 +152,9 @@ const styleList = computed(() => {
     }
 
     &.--size-large {
+        font-size: px(16);
+        line-height: px(24);
+        padding: px(11) px(24) px(13);
         font-size: px(16);
         line-height: px(24);
         padding: px(12) px(24);
