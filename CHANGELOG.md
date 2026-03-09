@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/staskozin/ui-kit/compare/v1.8.0...v1.8.1) (2026-03-09)
+
+### Bug Fixes
+
+- **UiButton:** исправлены стили кнопки ([6dd206f](https://github.com/staskozin/ui-kit/commit/6dd206f7ede287f4e40498787f837e8a3da38042))
+
 # [1.8.0](https://github.com/staskozin/ui-kit/compare/v1.7.0...v1.8.0) (2026-03-08)
 
 ### Features
