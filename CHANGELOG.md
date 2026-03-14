@@ -1,3 +1,9 @@
+## [1.8.3](https://github.com/staskozin/ui-kit/compare/v1.8.2...v1.8.3) (2026-03-14)
+
+### Bug Fixes
+
+- **UiButton:** убран дефолтный label ([2b993f2](https://github.com/staskozin/ui-kit/commit/2b993f29dd075c8139a1604acc0583525c6339d0))
+
 ## [1.8.2](https://github.com/staskozin/ui-kit/compare/v1.8.1...v1.8.2) (2026-03-14)
 
 ### Bug Fixes
