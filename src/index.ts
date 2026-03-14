@@ -5,4 +5,4 @@ import './assets/tokens.scss';
 // export { default as UiButton } from './components/UiButton.vue'
 
 export { default as UiButton } from './components/UiButton.vue';
-export { UiElementSize } from './types';
+export { UiElementSize, UiSemanticVariant } from './types';

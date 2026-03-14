@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { UiElementSize } from '../types';
+import { UiElementSize, UiSemanticVariant } from '../types';
 import UiIcon from './UiIcon.vue';
 import type { IconName } from '../assets/icons';
 
@@ -28,6 +28,7 @@ type UiButtonProps = {
     icon?: IconName;
     type?: 'submit' | 'button' | 'reset';
     size?: UiElementSize;
+    variant?: UiSemanticVariant;
     hue?: number;
     disabled?: boolean;
 };
@@ -37,17 +38,46 @@ const {
     icon,
     type = 'button',
     size = UiElementSize.Medium,
+    variant,
     hue,
     disabled = false,
 } = defineProps<UiButtonProps>();
 
+const hueByVariant: Record<UiSemanticVariant, number | undefined> = {
+    [UiSemanticVariant.Custom]: undefined,
+    [UiSemanticVariant.Neutral]: undefined,
+    [UiSemanticVariant.Primary]: 226,
+    [UiSemanticVariant.Success]: 145,
+    [UiSemanticVariant.Warning]: 91,
+    [UiSemanticVariant.Danger]: 30,
+    [UiSemanticVariant.Info]: 250,
+};
+
 // Computed
+const resolvedVariant = computed<UiSemanticVariant>(() => {
+    if (variant !== undefined) {
+        return variant;
+    }
+
+    return hue !== undefined
+        ? UiSemanticVariant.Custom
+        : UiSemanticVariant.Neutral;
+});
+
+const resolvedHue = computed(() => {
+    if (resolvedVariant.value === UiSemanticVariant.Custom) {
+        return hue;
+    }
+
+    return hueByVariant[resolvedVariant.value];
+});
+
 const classList = computed(() => {
     return [
         `--size-${size}`,
         ...(icon ? ['--has-icon'] : []),
         ...(label ? ['--has-label'] : []),
-        ...(hue !== undefined ? ['--accent'] : []),
+        ...(resolvedHue.value !== undefined ? ['--accent'] : []),
     ];
 });
 
@@ -56,7 +86,9 @@ const iconSize = computed(() => {
 });
 
 const styleList = computed(() => {
-    return hue !== undefined ? { '--hue': hue } : {};
+    return resolvedHue.value !== undefined
+        ? { '--hue': resolvedHue.value }
+        : {};
 });
 </script>
 
@@ -137,14 +169,22 @@ const styleList = computed(() => {
     &.--size-small {
         font-size: px(14);
         line-height: px(20);
-        padding: px(5) px(14) px(7);
+        padding: px(6) px(14);
         column-gap: px(4);
+
+        &.--has-icon {
+            padding: px(6) px(8);
+
+            &:not(.--has-label) {
+                padding: px(8);
+            }
+        }
     }
 
     &.--size-medium {
         font-size: px(16);
         line-height: px(24);
-        padding: px(7) px(20) px(9);
+        padding: px(8) px(20);
 
         &.--has-icon {
             padding: px(8) px(12);
@@ -158,7 +198,15 @@ const styleList = computed(() => {
     &.--size-large {
         font-size: px(16);
         line-height: px(24);
-        padding: px(11) px(24) px(13);
+        padding: px(12) px(24);
+
+        &.--has-icon {
+            padding: px(8) px(12);
+
+            &:not(.--has-label) {
+                padding: px(10);
+            }
+        }
     }
 }
 

@@ -2,23 +2,36 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import UiButton from './UiButton.vue';
 import Icons from '../assets/icons';
-import { UiElementSize } from '../types';
+import { UiElementSize, UiSemanticVariant } from '../types';
 
 // Meta
 const meta = {
     component: UiButton,
     tags: ['autodocs'],
+    args: {
+        type: 'button',
+        size: UiElementSize.Medium,
+        variant: UiSemanticVariant.Neutral,
+    },
     argTypes: {
+        type: {
+            options: ['button', 'submit', 'reset'],
+            control: { type: 'inline-radio' },
+        },
         size: {
             options: Object.values(UiElementSize),
             control: { type: 'inline-radio' },
         },
-        icon: {
-            options: Object.keys(Icons),
+        variant: {
+            options: Object.values(UiSemanticVariant),
             control: { type: 'select' },
         },
         hue: {
             control: { type: 'range', min: 0, max: 360, step: 1 },
+        },
+        icon: {
+            options: Object.keys(Icons),
+            control: { type: 'select' },
         },
     },
 } satisfies Meta<typeof UiButton>;
@@ -31,7 +44,6 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
     args: {
         label: 'Кнопка',
-        size: UiElementSize.Medium,
         disabled: false,
     },
 };
@@ -39,13 +51,12 @@ export const Normal: Story = {
 export const Accent: Story = {
     args: {
         label: 'Кнопка',
-        hue: 226,
+        variant: UiSemanticVariant.Primary,
     },
 };
 
 export const Icon: Story = {
     args: {
-        size: UiElementSize.Medium,
         icon: 'calendar',
     },
 };
@@ -53,22 +64,35 @@ export const Icon: Story = {
 export const IconAccent: Story = {
     args: {
         label: 'Кнопка',
-        size: UiElementSize.Medium,
         icon: 'calendar',
-        hue: 226,
+        variant: UiSemanticVariant.Primary,
     },
 };
 
-export const Red: Story = {
+export const Danger: Story = {
     args: {
         label: 'Кнопка',
-        hue: 27,
+        variant: UiSemanticVariant.Danger,
     },
 };
 
-export const Green: Story = {
+export const Success: Story = {
     args: {
         label: 'Кнопка',
-        hue: 150,
+        variant: UiSemanticVariant.Success,
+    },
+};
+
+export const Warning: Story = {
+    args: {
+        label: 'Кнопка',
+        variant: UiSemanticVariant.Warning,
+    },
+};
+
+export const Info: Story = {
+    args: {
+        label: 'Кнопка',
+        variant: UiSemanticVariant.Info,
     },
 };
