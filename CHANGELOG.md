@@ -1,3 +1,9 @@
+# [1.10.0](https://github.com/staskozin/ui-kit/compare/v1.9.1...v1.10.0) (2026-03-14)
+
+### Features
+
+- **UiButton:** добавлена иконка справа ([8b0d27a](https://github.com/staskozin/ui-kit/commit/8b0d27aace0c65eb699329011e5e467da58d4263))
+
 ## [1.9.1](https://github.com/staskozin/ui-kit/compare/v1.9.0...v1.9.1) (2026-03-14)
 
 ### Bug Fixes
