@@ -1,0 +1,84 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { UiElementSize, UiSemanticVariant } from './types';
+
+<Meta title="Документация/TypeScript типы" />
+
+# TypeScript типы
+
+На этой странице собраны публичные TypeScript-типы и связанные runtime-константы из `@staskozin/ui-kit`.
+
+## `UiElementSize` (константа)
+
+```ts
+const UiElementSize = {
+    Small: 'small',
+    Medium: 'medium',
+    Large: 'large',
+} as const;
+```
+
+Доступные значения:
+
+<ul>
+    {Object.values(UiElementSize).map((size) => (
+        <li key={size}>
+            <code>{size}</code>
+        </li>
+    ))}
+</ul>
+
+## `UiElementSize` (тип)
+
+```ts
+type UiElementSize = 'small' | 'medium' | 'large';
+```
+
+Выводится из константы:
+
+```ts
+type UiElementSize = (typeof UiElementSize)[keyof typeof UiElementSize];
+```
+
+## `UiSemanticVariant` (константа)
+
+```ts
+const UiSemanticVariant = {
+    Custom: 'custom',
+    Neutral: 'neutral',
+    Primary: 'primary',
+    Success: 'success',
+    Warning: 'warning',
+    Danger: 'danger',
+    Info: 'info',
+} as const;
+```
+
+Доступные значения:
+
+<ul>
+    {Object.values(UiSemanticVariant).map((variant) => (
+        <li key={variant}>
+            <code>{variant}</code>
+        </li>
+    ))}
+</ul>
+
+## `UiSemanticVariant` (тип)
+
+```ts
+type UiSemanticVariant =
+    | 'custom'
+    | 'neutral'
+    | 'primary'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'info';
+```
+
+Выводится из константы:
+
+```ts
+type UiSemanticVariant =
+    (typeof UiSemanticVariant)[keyof typeof UiSemanticVariant];
+```
