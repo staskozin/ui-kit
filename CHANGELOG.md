@@ -1,3 +1,9 @@
+## [1.8.2](https://github.com/staskozin/ui-kit/compare/v1.8.1...v1.8.2) (2026-03-14)
+
+### Bug Fixes
+
+- **UiButton/UiIcon:** исправления ([d0e8d54](https://github.com/staskozin/ui-kit/commit/d0e8d5441eff3f275160c025597bec90b7adcba9))
+
 ## [1.8.1](https://github.com/staskozin/ui-kit/compare/v1.8.0...v1.8.1) (2026-03-09)
 
 ### Bug Fixes
