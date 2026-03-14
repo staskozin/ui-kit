@@ -33,7 +33,7 @@ type UiButtonProps = {
 };
 
 const {
-    label = 'Кнопка',
+    label,
     icon,
     type = 'button',
     size = UiElementSize.Medium,

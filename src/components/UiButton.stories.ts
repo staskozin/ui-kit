@@ -30,6 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
+        label: 'Кнопка',
         size: UiElementSize.Medium,
         disabled: false,
     },
@@ -37,6 +38,7 @@ export const Normal: Story = {
 
 export const Accent: Story = {
     args: {
+        label: 'Кнопка',
         hue: 226,
     },
 };
@@ -50,6 +52,7 @@ export const Icon: Story = {
 
 export const IconAccent: Story = {
     args: {
+        label: 'Кнопка',
         size: UiElementSize.Medium,
         icon: 'calendar',
         hue: 226,
@@ -58,12 +61,14 @@ export const IconAccent: Story = {
 
 export const Red: Story = {
     args: {
+        label: 'Кнопка',
         hue: 27,
     },
 };
 
 export const Green: Story = {
     args: {
+        label: 'Кнопка',
         hue: 150,
     },
 };
