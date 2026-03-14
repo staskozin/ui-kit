@@ -48,7 +48,7 @@ const hueByVariant: Record<UiSemanticVariant, number | undefined> = {
     [UiSemanticVariant.Neutral]: undefined,
     [UiSemanticVariant.Primary]: 226,
     [UiSemanticVariant.Success]: 145,
-    [UiSemanticVariant.Warning]: 91,
+    [UiSemanticVariant.Warning]: 75,
     [UiSemanticVariant.Danger]: 30,
     [UiSemanticVariant.Info]: 250,
 };
@@ -78,6 +78,9 @@ const classList = computed(() => {
         ...(icon ? ['--has-icon'] : []),
         ...(label ? ['--has-label'] : []),
         ...(resolvedHue.value !== undefined ? ['--accent'] : []),
+        ...(resolvedVariant.value === UiSemanticVariant.Warning
+            ? ['--warning']
+            : []),
     ];
 });
 
@@ -163,6 +166,22 @@ const styleList = computed(() => {
 
         .UiIcon {
             color: gray(200);
+        }
+    }
+
+    &.--accent.--warning {
+        background-color: color(600);
+
+        &:hover {
+            background-color: color(700);
+        }
+
+        &:active {
+            background-color: color(800);
+        }
+
+        &:disabled {
+            background-color: color(300);
         }
     }
 
