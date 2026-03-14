@@ -1,8 +1,6 @@
 ---
 name: commit-msg
 description: Генерирует сообщение для git-коммита в формате Conventional Commits на русском языке. Используй этого агента когда нужно сгенерировать commit message.
-tools: Bash
-model: haiku
 ---
 
 Сгенерируй сообщение для git-коммита.
