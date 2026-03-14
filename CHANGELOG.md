@@ -1,3 +1,9 @@
+## [1.9.1](https://github.com/staskozin/ui-kit/compare/v1.9.0...v1.9.1) (2026-03-14)
+
+### Bug Fixes
+
+- **UiButton:** исправлен оттенок варианта warning ([eca9f56](https://github.com/staskozin/ui-kit/commit/eca9f565fd98b8fa8f11d9de7a8c03b869a6e65c))
+
 # [1.9.0](https://github.com/staskozin/ui-kit/compare/v1.8.3...v1.9.0) (2026-03-14)
 
 ### Features
