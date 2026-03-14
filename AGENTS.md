@@ -58,17 +58,17 @@ src/
 
 ## Коммиты
 
-Conventional Commits (commitlint + husky hook). Сообщения на русском. Примеры:
+Для генерации commit message используй отдельный skill `commit-msg`:
 
-- `feat(components): добавлен UiButton` — minor release
-- `fix(package.json): обновлены зависимости` — patch release
-- `feat!: редизайн API UiButton` — major release (breaking change)
+- `.agents/skills/commit-msg/SKILL.md`
+
+Используй его, когда нужно сформировать сообщение коммита по Conventional Commits (на русском), по описанию пользователя или по staged changes.
 
 ## Стили
 
 Правила по дизайн-токенам, цветовым функциям (`gray()`, `color()`) и размерам через `px()` вынесены в отдельный skill:
 
-- `.codex/skills/ui-styles/SKILL.md`
+- `.agents/skills/ui-styles/SKILL.md`
 
 ## Как добавлять компоненты
 
@@ -81,7 +81,7 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 Проектные skills хранятся в репозитории по пути:
 
 ```text
-.codex/skills/<skill-name>/SKILL.md
+.agents/skills/<skill-name>/SKILL.md
 ```
 
 Рекомендуемая структура skill:
@@ -95,4 +95,4 @@ Conventional Commits (commitlint + husky hook). Сообщения на русс
 - Имена директорий skills — короткие и стабильные, в `kebab-case`
 - Один skill = одна задача или workflow
 - Изменения skills проходят через PR вместе с кодом проекта
-- При работе агент должен сначала использовать skills, подключенные раннером, и учитывать проектные skills из `.codex/skills`, если они доступны в контексте
+- При работе агент должен сначала использовать skills, подключенные раннером, и учитывать проектные skills из `.agents/skills`, если они доступны в контексте
