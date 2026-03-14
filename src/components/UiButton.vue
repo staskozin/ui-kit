@@ -137,7 +137,7 @@ const styleList = computed(() => {
     &.--size-small {
         font-size: px(14);
         line-height: px(20);
-        padding: px(5) px(14) px(7) px(14);
+        padding: px(5) px(14) px(7);
         column-gap: px(4);
     }
 
