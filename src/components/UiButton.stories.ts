@@ -29,7 +29,11 @@ const meta = {
         hue: {
             control: { type: 'range', min: 0, max: 360, step: 1 },
         },
-        icon: {
+        iconLeft: {
+            options: Object.keys(Icons),
+            control: { type: 'select' },
+        },
+        iconRight: {
             options: Object.keys(Icons),
             control: { type: 'select' },
         },
@@ -55,16 +59,22 @@ export const Accent: Story = {
     },
 };
 
-export const Icon: Story = {
+export const IconLeft: Story = {
     args: {
-        icon: 'calendar',
+        iconLeft: 'calendar',
     },
 };
 
-export const IconAccent: Story = {
+export const IconRight: Story = {
+    args: {
+        iconRight: 'chevronDown',
+    },
+};
+
+export const IconLeftAccent: Story = {
     args: {
         label: 'Кнопка',
-        icon: 'calendar',
+        iconLeft: 'calendar',
         variant: UiSemanticVariant.Primary,
     },
 };

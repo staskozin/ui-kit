@@ -7,12 +7,18 @@
         class="UiButton"
     >
         <UiIcon
-            v-if="icon"
-            :name="icon"
+            v-if="iconLeft"
+            :name="iconLeft"
             :size="iconSize"
         />
 
         {{ label }}
+
+        <UiIcon
+            v-if="iconRight"
+            :name="iconRight"
+            :size="iconSize"
+        />
     </button>
 </template>
 
@@ -25,7 +31,8 @@ import type { IconName } from '../assets/icons';
 // Props
 type UiButtonProps = {
     label?: string;
-    icon?: IconName;
+    iconLeft?: IconName;
+    iconRight?: IconName;
     type?: 'submit' | 'button' | 'reset';
     size?: UiElementSize;
     variant?: UiSemanticVariant;
@@ -35,7 +42,8 @@ type UiButtonProps = {
 
 const {
     label,
-    icon,
+    iconLeft,
+    iconRight,
     type = 'button',
     size = UiElementSize.Medium,
     variant,
@@ -75,7 +83,8 @@ const resolvedHue = computed(() => {
 const classList = computed(() => {
     return [
         `--size-${size}`,
-        ...(icon ? ['--has-icon'] : []),
+        ...(iconLeft ? ['--has-icon-left'] : []),
+        ...(iconRight ? ['--has-icon-right'] : []),
         ...(label ? ['--has-label'] : []),
         ...(resolvedHue.value !== undefined ? ['--accent'] : []),
         ...(resolvedVariant.value === UiSemanticVariant.Warning
@@ -191,7 +200,7 @@ const styleList = computed(() => {
         padding: px(6) px(14);
         column-gap: px(4);
 
-        &.--has-icon {
+        &.--has-icon-left {
             padding: px(6) px(8);
 
             &:not(.--has-label) {
@@ -205,7 +214,7 @@ const styleList = computed(() => {
         line-height: px(24);
         padding: px(8) px(20);
 
-        &.--has-icon {
+        &.--has-icon-left {
             padding: px(8) px(12);
 
             &:not(.--has-label) {
@@ -219,7 +228,7 @@ const styleList = computed(() => {
         line-height: px(24);
         padding: px(12) px(24);
 
-        &.--has-icon {
+        &.--has-icon-left {
             padding: px(8) px(12);
 
             &:not(.--has-label) {
