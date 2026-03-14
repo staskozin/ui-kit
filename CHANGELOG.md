@@ -1,3 +1,9 @@
+# [1.9.0](https://github.com/staskozin/ui-kit/compare/v1.8.3...v1.9.0) (2026-03-14)
+
+### Features
+
+- **UiButton:** реализована семантика variant с поддержкой custom и приоритетом над hue ([882bb76](https://github.com/staskozin/ui-kit/commit/882bb76115752db33e4b3db98ba44ff1d3ad8ff5))
+
 ## [1.8.3](https://github.com/staskozin/ui-kit/compare/v1.8.2...v1.8.3) (2026-03-14)
 
 ### Bug Fixes
