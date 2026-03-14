@@ -1,3 +1,9 @@
+# [1.11.0](https://github.com/staskozin/ui-kit/compare/v1.10.0...v1.11.0) (2026-03-14)
+
+### Features
+
+- **stories:** добавлена story IconsBoth ([7e2c40a](https://github.com/staskozin/ui-kit/commit/7e2c40a07a1176cad548125c45618beab49175e3))
+
 # [1.10.0](https://github.com/staskozin/ui-kit/compare/v1.9.1...v1.10.0) (2026-03-14)
 
 ### Features
