@@ -79,6 +79,14 @@ export const IconLeftAccent: Story = {
     },
 };
 
+export const IconsBoth: Story = {
+    args: {
+        label: 'Кнопка',
+        iconLeft: 'calendar',
+        iconRight: 'chevronDown',
+    },
+};
+
 export const Danger: Story = {
     args: {
         label: 'Кнопка',
