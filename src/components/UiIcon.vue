@@ -8,12 +8,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import Icons from '../assets/icons';
+import Icons, { type IconName } from '../assets/icons';
 import { UiElementSize } from '../types';
 
 // Props
 type UiIconProps = {
-    name: 'calendar';
+    name: IconName;
     size?: UiElementSize;
 };
 

@@ -1,5 +1,6 @@
 <template>
     <button
+        :type="type"
         :disabled="disabled"
         :class="classList"
         :style="styleList"
@@ -19,11 +20,13 @@
 import { computed } from 'vue';
 import { UiElementSize } from '../types';
 import UiIcon from './UiIcon.vue';
+import type { IconName } from '../assets/icons';
 
 // Props
 type UiButtonProps = {
     label?: string;
-    icon?: 'calendar';
+    icon?: IconName;
+    type?: 'submit' | 'button' | 'reset';
     size?: UiElementSize;
     hue?: number;
     disabled?: boolean;
@@ -32,6 +35,7 @@ type UiButtonProps = {
 const {
     label = 'Кнопка',
     icon,
+    type = 'button',
     size = UiElementSize.Medium,
     hue,
     disabled = false,
@@ -122,7 +126,7 @@ const styleList = computed(() => {
         }
 
         &:focus {
-            outline-color: px(2) solid gray(300);
+            outline: px(2) solid gray(300);
         }
 
         .UiIcon {
@@ -155,9 +159,6 @@ const styleList = computed(() => {
         font-size: px(16);
         line-height: px(24);
         padding: px(11) px(24) px(13);
-        font-size: px(16);
-        line-height: px(24);
-        padding: px(12) px(24);
     }
 }
 
