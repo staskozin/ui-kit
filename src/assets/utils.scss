@@ -10,13 +10,22 @@
     @return var(--ui-color-gray-#{$step});
 }
 
+// Применяет hover-стили только на устройствах с реальным hover (обычно не mobile).
+@mixin hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
 // Миксин для мгновенной реакции на hover с плавным возвратом.
 @mixin transition-instant-hover($property: color) {
     transition-duration: 0.22s;
     transition-property: $property;
     transition-timing-function: ease-out;
 
-    &:hover {
+    @include hover {
         transition: none;
     }
 }

@@ -128,7 +128,7 @@ const styleList = computed(() => {
     background-color: gray(400);
     color: gray(800);
 
-    &:hover {
+    @include hover {
         background-color: gray(500);
     }
 
@@ -154,7 +154,7 @@ const styleList = computed(() => {
         background-color: color(700);
         color: gray(200);
 
-        &:hover {
+        @include hover {
             background-color: color(800);
             color: gray(300);
         }
@@ -181,7 +181,7 @@ const styleList = computed(() => {
     &.--accent.--warning {
         background-color: color(600);
 
-        &:hover {
+        @include hover {
             background-color: color(700);
         }
 
