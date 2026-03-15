@@ -12,7 +12,12 @@
             :size="iconSize"
         />
 
-        {{ label }}
+        <span
+            v-if="label"
+            class="UiButton__label"
+        >
+            {{ label }}
+        </span>
 
         <UiIcon
             v-if="iconRight"
@@ -247,6 +252,13 @@ const styleList = computed(() => {
     &.--accent:disabled {
         background-color: color(900);
         color: gray(600);
+    }
+}
+
+// В Firefox текст в кнопке рендерится чуть ниже, поднимаем примерно на 1px для выравнивания.
+@supports (-moz-appearance: none) {
+    .UiButton__label {
+        transform: translateY(-0.0625em);
     }
 }
 </style>
