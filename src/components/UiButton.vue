@@ -123,7 +123,6 @@ const styleList = computed(() => {
         Arial,
         'Noto Sans',
         sans-serif;
-    font-weight: 400;
     display: flex;
     align-items: center;
     column-gap: px(8);
@@ -200,8 +199,7 @@ const styleList = computed(() => {
     }
 
     &.--size-small {
-        font-size: px(14);
-        line-height: px(20);
+        @include text-smaller;
         padding: px(6) px(14);
         column-gap: px(4);
 
@@ -215,8 +213,7 @@ const styleList = computed(() => {
     }
 
     &.--size-medium {
-        font-size: px(16);
-        line-height: px(24);
+        @include text-main;
         padding: px(8) px(20);
 
         &.--has-icon-left {
@@ -229,8 +226,7 @@ const styleList = computed(() => {
     }
 
     &.--size-large {
-        font-size: px(16);
-        line-height: px(24);
+        @include text-main;
         padding: px(12) px(24);
 
         &.--has-icon-left {

@@ -18,7 +18,7 @@ const config: StorybookConfig = {
         config.css.preprocessorOptions ??= {};
         config.css.preprocessorOptions.scss = {
             ...config.css.preprocessorOptions.scss,
-            additionalData: `@use "${resolve(__dirname, '../src/assets/utils').replace(/\\/g, '/')}" as *;\n`,
+            additionalData: `@use "${resolve(__dirname, '../src/assets/utils').replace(/\\/g, '/')}" as *;\n@use "${resolve(__dirname, '../src/assets/typography').replace(/\\/g, '/')}" as *;\n`,
         };
         return config;
     },

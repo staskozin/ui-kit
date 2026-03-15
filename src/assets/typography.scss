@@ -1,0 +1,67 @@
+@use './utils' as *;
+
+@mixin text-style($font-size, $line-height, $font-weight) {
+    font-size: px($font-size);
+    line-height: px($line-height);
+    font-weight: $font-weight;
+}
+
+@mixin text-caption {
+    @include text-style(12, 16, 400);
+}
+
+@mixin text-smaller {
+    @include text-style(14, 20, 400);
+}
+
+@mixin text-main {
+    @include text-style(16, 24, 400);
+}
+
+@mixin text-subtitle {
+    @include text-style(20, 24, 400);
+}
+
+@mixin text-title {
+    @include text-style(32, 36, 400);
+}
+
+@mixin text-smaller-medium {
+    @include text-style(14, 20, 500);
+}
+
+@mixin text-main-medium {
+    @include text-style(16, 24, 500);
+}
+
+@mixin text-subtitle-medium {
+    @include text-style(20, 24, 500);
+}
+
+@mixin text-title-medium {
+    @include text-style(32, 36, 500);
+}
+
+@mixin text-smaller-bold {
+    @include text-style(14, 20, 700);
+}
+
+@mixin text-main-bold {
+    @include text-style(16, 24, 700);
+}
+
+@mixin text-subtitle-bold {
+    @include text-style(20, 24, 700);
+}
+
+@mixin text-title-bold {
+    @include text-style(32, 36, 700);
+}
+
+@mixin text-subtitle-light {
+    @include text-style(20, 24, 300);
+}
+
+@mixin text-title-light {
+    @include text-style(32, 36, 300);
+}

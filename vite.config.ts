@@ -17,7 +17,7 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@use "${resolve(__dirname, 'src/assets/utils').replace(/\\/g, '/')}" as *;\n`,
+                additionalData: `@use "${resolve(__dirname, 'src/assets/utils').replace(/\\/g, '/')}" as *;\n@use "${resolve(__dirname, 'src/assets/typography').replace(/\\/g, '/')}" as *;\n`,
             },
         },
     },
