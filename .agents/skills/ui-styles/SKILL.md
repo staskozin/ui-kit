@@ -19,8 +19,9 @@ description: Используй этот skill, когда нужно добав
 ## Источники в проекте
 
 - `src/assets/tokens.scss` — цветовые токены и семантика тем
-- `src/assets/utils.scss` — SCSS-функция `px()`
-- Vite/Storybook `additionalData` — глобально подключает SCSS-функции
+- `src/assets/utils.scss` — базовые SCSS-функции и миксины (`px()`, `gray()`, `color()`, `hover` и т.д.)
+- `src/assets/typography.scss` — типографические миксины с префиксом `text-`
+- Vite/Storybook `additionalData` — глобально подключает `utils.scss` и `typography.scss`
 
 ## Правила работы со стилями
 
@@ -95,8 +96,40 @@ padding: px(8) px(20); // -> 0.5rem 1.25rem
 border-radius: px(4); // -> 0.25rem
 ```
 
+### 8) Типографика через миксины `text-*`
+
+Типографику задавай через миксины из `src/assets/typography.scss`.
+Имена миксинов должны быть с префиксом `text-`.
+
+Доступные миксины:
+
+- `text-caption`
+- `text-smaller`
+- `text-main`
+- `text-subtitle`
+- `text-title`
+- `text-smaller-medium`
+- `text-main-medium`
+- `text-subtitle-medium`
+- `text-title-medium`
+- `text-smaller-bold`
+- `text-main-bold`
+- `text-subtitle-bold`
+- `text-title-bold`
+- `text-subtitle-light`
+- `text-title-light`
+
+Пример:
+
+```scss
+.UiButton.--size-medium {
+    @include text-main;
+}
+```
+
 ## Ограничения
 
 - Не используй "сырые" пиксели в стилях, если можно применить `px()`
 - Не вводи новые цветовые значения без необходимости, сначала используй `gray()`/`color()`
 - Сохраняй текущий паттерн neutral vs accent через `hue`
+- Для типографики не дублируй `font-size/line-height/font-weight` вручную, если подходит один из `text-*` миксинов
