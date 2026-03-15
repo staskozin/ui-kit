@@ -1,3 +1,9 @@
+## [1.11.2](https://github.com/staskozin/ui-kit/compare/v1.11.1...v1.11.2) (2026-03-15)
+
+### Bug Fixes
+
+- **UiButton:** исправлено вертикальное выравнивание текста кнопки в Firefox ([4e31df0](https://github.com/staskozin/ui-kit/commit/4e31df019a70709a4db9dd5ee913e60bec97f58e))
+
 ## [1.11.1](https://github.com/staskozin/ui-kit/compare/v1.11.0...v1.11.1) (2026-03-15)
 
 ### Bug Fixes
