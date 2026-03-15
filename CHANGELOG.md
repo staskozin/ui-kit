@@ -1,3 +1,9 @@
+## [1.11.1](https://github.com/staskozin/ui-kit/compare/v1.11.0...v1.11.1) (2026-03-15)
+
+### Bug Fixes
+
+- **UiButton:** убран hover на мобильных устройствах ([230ae55](https://github.com/staskozin/ui-kit/commit/230ae55f773c73ec01e35c9a2f601c8eac1f910d))
+
 # [1.11.0](https://github.com/staskozin/ui-kit/compare/v1.10.0...v1.11.0) (2026-03-14)
 
 ### Features
