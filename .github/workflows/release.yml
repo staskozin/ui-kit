@@ -13,6 +13,7 @@ jobs:
             contents: write
             issues: write
             pull-requests: write
+            id-token: write
         steps:
             - uses: actions/checkout@v5
               with:
@@ -36,7 +37,6 @@ jobs:
             - name: Release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: |
                   git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
                   npx semantic-release
