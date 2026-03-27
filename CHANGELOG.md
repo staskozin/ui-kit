@@ -1,3 +1,9 @@
+## [1.11.3](https://github.com/staskozin/ui-kit/compare/v1.11.2...v1.11.3) (2026-03-27)
+
+### Bug Fixes
+
+- **release:** trigger npm provenance publish ([f77d3f6](https://github.com/staskozin/ui-kit/commit/f77d3f68f9301cff787b5a3e44fba1ae8e958730))
+
 ## [1.11.2](https://github.com/staskozin/ui-kit/compare/v1.11.1...v1.11.2) (2026-03-15)
 
 ### Bug Fixes
