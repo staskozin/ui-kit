@@ -27,6 +27,7 @@ jobs:
 
             - run: npm ci
             - run: npm run lint
+            - run: npm run test
             - run: npm run build
             - name: Upload dist artifact
               uses: actions/upload-artifact@v6

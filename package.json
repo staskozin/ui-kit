@@ -29,7 +29,8 @@
         "build:storybook": "storybook build",
         "prepare": "husky",
         "format": "prettier --write .",
-        "lint": "prettier --check ."
+        "lint": "prettier --check .",
+        "test": "vitest run"
     },
     "lint-staged": {
         "*": "prettier --write --ignore-unknown"
